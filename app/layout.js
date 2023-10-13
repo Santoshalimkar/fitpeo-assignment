@@ -1,5 +1,7 @@
+import Dashboard from '@/components/Dashboard'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Navbar from '@/components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +13,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=''>
+       <main className='flex'>
+        <div className=''>
+        <Dashboard/>
+        </div>
+      <div className='flex flex-col w-full bg-slate-100'>
+      <Navbar/>
+       {children}
+
+      </div>
+       </main>
+       
+      </body>
     </html>
   )
 }
